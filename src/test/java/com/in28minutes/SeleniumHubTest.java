@@ -2,6 +2,7 @@ package com.in28minutes;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
