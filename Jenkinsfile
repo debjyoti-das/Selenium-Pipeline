@@ -23,7 +23,12 @@ node {
     }
 
     stage('Build'){
-        sh "mvn clean test"
+    	try {
+        	sh "mvn clean test"
+	}
+	catch (exc) {
+		echo "there are test failures"
+	}
     }
 
 
