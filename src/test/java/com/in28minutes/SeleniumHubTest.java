@@ -27,7 +27,7 @@ public class SeleniumHubTest {
 	
 	//selenium-standalone start -- -role node -port 5556 -hub http://192.168.8.69:4444/grid/register/ 
 
-	@Test(threadPoolSize=2, invocationCount=4)
+	@Test
 	public void hub_chrome() throws MalformedURLException, InterruptedException {
 		
 		DesiredCapabilities capabilites = new DesiredCapabilities();
@@ -52,6 +52,9 @@ public class SeleniumHubTest {
 		String pageTitle = remoteDriver.getTitle();
 		assertEquals("Using Dockerizing Jenkins Pipeline", pageTitle);
 		Thread.sleep(10000);
+		String result = remoteDriver.findElement(By.xpath("/html/body/p")).getText();
+		System.out.println("the paragraph string is " + result);
+
 		remoteDriver.quit();
 	}
 
