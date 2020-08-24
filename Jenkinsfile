@@ -27,7 +27,10 @@ node {
         	sh "mvn clean test"
 	}
 	catch (exc) {
-		echo "there are test failures"
+		echo "there are test failures. trying to rollback deployment."
+		sh("curl -LO https://storage.googleapis.com/kubernetes-release/release/\$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl")
+                sh("chmod +x ./kubectl")
+		sh("./kubectl rollout undo deployment app-pipeline-332488 -n debjyoti")
 	}
     }
 
