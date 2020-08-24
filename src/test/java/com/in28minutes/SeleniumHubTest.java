@@ -59,6 +59,7 @@ public class SeleniumHubTest {
 		Thread.sleep(10000);
 		String result = remoteDriver.findElement(By.xpath("/html/body/p")).getText();
 		System.out.println("the paragraph string is " + result);
+		assertEquals("Hello from Kubernetes. Commit 4", result);
 
 		remoteDriver.quit();
 	}
