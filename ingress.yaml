@@ -14,14 +14,6 @@ spec:
         backend:
           serviceName: jenkins-332488
           servicePort: 8080
-      - path: /debjyoti/sonarqube
-        backend:
-          serviceName: sonar-332488
-          servicePort: 8100
-      - path: /debjyoti/nexus
-        backend:
-          serviceName: nexus-332488
-          servicePort: 8081
       - path: /debjyoti/app
         backend:
           serviceName: app-pipeline-332488

@@ -44,14 +44,14 @@ public class SeleniumHubTest {
 		//WebDriverManager.chromedriver().setup();
 		//WebDriver driver = new ChromeDriver();
 		WebDriver remoteDriver = new RemoteWebDriver(
-				new URL("http://51.137.15.88:8100/wd/hub"), capabilites);
+				new URL("http://51.105.215.119:8100/wd/hub"), capabilites);
 		remoteDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 		//RemoteWebDriver
 		//	Location of Standaloneserver
 		//  Which Browser? Which OS? => Capabilities
 		
-		remoteDriver.get("http://20.56.232.64/debjyoti/app");
+		remoteDriver.get("http://51.124.61.78/debjyoti/app");
 		System.out.println(remoteDriver.getCurrentUrl());
 		System.out.println(remoteDriver.getTitle());
 		String pageTitle = remoteDriver.getTitle();
@@ -59,7 +59,7 @@ public class SeleniumHubTest {
 		Thread.sleep(10000);
 		String result = remoteDriver.findElement(By.xpath("/html/body/p")).getText();
 		System.out.println("the paragraph string is " + result);
-		assertEquals("Hello from Kubernetes. Commit 4", result);
+		assertEquals("Hello from Kubernetes. Testing selenium integration - commit 2", result);
 
 		remoteDriver.quit();
 	}

@@ -22,7 +22,7 @@ node {
         checkout scm
     }
 
-    stage('Build'){
+    stage('Selenium Test'){
     	try {
         	sh "mvn clean test"
 	}
