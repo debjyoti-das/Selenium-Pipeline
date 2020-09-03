@@ -44,14 +44,14 @@ public class SeleniumHubTest {
 		//WebDriverManager.chromedriver().setup();
 		//WebDriver driver = new ChromeDriver();
 		WebDriver remoteDriver = new RemoteWebDriver(
-				new URL("http://51.105.215.119:8100/wd/hub"), capabilites);
+				new URL("http://51.138.40.183:8100/wd/hub"), capabilites);
 		remoteDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 		//RemoteWebDriver
 		//	Location of Standaloneserver
 		//  Which Browser? Which OS? => Capabilities
 		
-		remoteDriver.get("http://51.124.61.78/debjyoti/app");
+		remoteDriver.get("http://40.114.181.69/debjyoti/app");
 		System.out.println(remoteDriver.getCurrentUrl());
 		System.out.println(remoteDriver.getTitle());
 		String pageTitle = remoteDriver.getTitle();
